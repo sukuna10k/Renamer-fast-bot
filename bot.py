@@ -4,11 +4,11 @@ import os
 
 from plugins.cb_data import app as Client2
 
-TOKEN = os.environ.get("TOKEN", "")
+TOKEN = os.environ.get("TOKEN", "7857832326:AAEelUaX96QkzWzj-NmPXP418LF_MqUbNPA")
 
-API_ID = int(os.environ.get("API_ID", ""))
+API_ID = int(os.environ.get("API_ID", "24817837"))
 
-API_HASH = os.environ.get("API_HASH", "")
+API_HASH = os.environ.get("API_HASH", "acd9f0cc6beb08ce59383cf250052686")
 
 STRING = os.environ.get("STRING", "")
 
