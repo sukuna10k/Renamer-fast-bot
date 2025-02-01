@@ -13,14 +13,14 @@ from helper.date import add_date, check_expi
 import datetime
 from datetime import date as date_
 
-CHANNEL = os.environ.get('CHANNEL', "")
+CHANNEL = os.environ.get('CHANNEL', "Otakukingcey1")
 STRING = os.environ.get("STRING", "")
-log_channel = int(os.environ.get("LOG_CHANNEL", ""))
-token = os.environ.get('TOKEN', '')
+log_channel = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))
+token = os.environ.get('TOKEN', '7857832326:AAEelUaX96QkzWzj-NmPXP418LF_MqUbNPA')
 botid = token.split(':')[0]
 
-DB_NAME = os.environ.get("DB_NAME", "")
-DB_URL = os.environ.get("DB_URL", "")
+DB_NAME = os.environ.get("DB_NAME", "ethan")
+DB_URL = os.environ.get("DB_URL", "mongodb+srv://Ethan:Ethan123@telegrambots.lva9j.mongodb.net/?retryWrites=true&w=majority&appName=TELEGRAMBOTS")
 mongo = pymongo.MongoClient(DB_URL)
 db = mongo[DB_NAME]
 dbcol = db["promo"]
@@ -57,8 +57,8 @@ Veuillez m'envoyer un **Document ou une Vidéo**
 et entrez un nouveau nom de fichier pour le renommer.__
 """, reply_to_message_id=message.id,
 reply_markup=InlineKeyboardMarkup(
-[[InlineKeyboardButton("Support 🇮🇳", url="https://t.me/lntechnical")],
-[InlineKeyboardButton("S'abonner 🧐", url="https://youtube.com/c/LNtechnical")]]))
+[[InlineKeyboardButton("Support ⚙️", url="https://t.me/Kingcey1")],
+[InlineKeyboardButton("S'abonner 🧐", url="https://youtube.com/c/AntiFlix_A")]]))
         return
     if id:
         if id == procode:
@@ -77,7 +77,8 @@ async def send_doc(client, message):
             await message.reply_text("**__Vous n'êtes pas abonné à mon canal__**",
             reply_to_message_id=message.id,
             reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Support 🇮🇳", url=f"https://t.me/{update_channel}")]]))
+            [[InlineKeyboardButton("Rejoindre 1", url=f"https://t.me/{update_channel}")],
+            [InlineKeyboardButton("Rejoindre 2", url=f"https://t.me/AntiFlix_A")]])) 
             return
     try:
         bot_data = find_one(int(botid))
