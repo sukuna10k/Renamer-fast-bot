@@ -1,54 +1,53 @@
-"""lokaman"""
-from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup,ForceReply)
-from pyrogram import Client , filters
+from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, ForceReply)
+from pyrogram import Client, filters
 
 @Client.on_callback_query(filters.regex('upgrade'))
-async def upgrade(bot,update):
-	text = """**Free Plan User**
-	Daily  Upload limit 2GB
-	Price 0
+async def upgrade(bot, update):
+	text = """**Utilisateur du Plan Gratuit**  
+	Limite de téléversement quotidienne : 2GB  
+	Prix : 0F
 	
-	**VIP 1 ** 
-	Daily  Upload  limit 50GB
-	Price Rs 1231  🇮🇳/🌎 15$  per Year 
+	**VIP 1**  
+	Limite de téléversement quotidienne : 50GB  
+	Prix :  2000F / 🌎 $ par an  
 	
-	**VIP 2 **
-	Daily Upload limit Unlimited 
-	Price Rs  2051  🇮🇳/🌎 25$  per Year
+	**VIP 2**  
+	Limite de téléversement quotidienne : Illimitée  
+	Prix :  3500F / 🌎 $ par an  
 	
+	Payez par Mobile Money : ```payer par numéro de téléphone```  
 	
-	Pay Using Upi I'd ```9480251952@paytm```
-	
-	After Payment Send Screenshots Of 
-        Payment To Admin"""
+	Après le paiement, envoyez la capture d'écran  
+        du paiement à l'Administrateur."""
 	keybord = InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/mrlokaman")], 
-        			[InlineKeyboardButton("PayPal 🌎",url = "https://www.paypal.me/lokamanchendekar"),
-        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/los89jy0")],[InlineKeyboardButton("Cancel",callback_data = "cancel")  ]])
-	await update.message.edit(text = text,reply_markup = keybord)
+        			InlineKeyboardButton("ADMIN 🛂", url="https://t.me/Kingcey")], 
+        			[InlineKeyboardButton("PayPal 🌎", url="https://www.paypal.me"),
+        			InlineKeyboardButton("Paytm", url="https://p.paytm.me")],
+        			[InlineKeyboardButton("Annuler", callback_data="cancel")]])
+	await update.message.edit(text=text, reply_markup=keybord)
 	
 
 @Client.on_message(filters.private & filters.command(["upgrade"]))
-async def upgradecm(bot,message):
-	text = """**Free Plan User**
-	Daily  Upload limit 2GB
-	Price 0
+async def upgradecm(bot, message):
+	text = """**Utilisateur du Plan Gratuit**  
+	Limite de téléversement quotidienne : 2GB  
+	Prix : 0  
 	
-	**VIP 1 ** 
-	Daily  Upload  limit 50GB
-	Price Rs 1231  🇮🇳/🌎 15$  per Year 
+	**VIP 1**  
+	Limite de téléversement quotidienne : 50GB  
+	Prix :  2000F  / 🌎 $ par an  
 	
-	**VIP 2 **
-	Daily Upload limit Unlimited
-	Price Rs  2051  🇮🇳/🌎 25$  per Year
+	**VIP 2**  
+	Limite de téléversement quotidienne : Illimitée  
+	Prix : 3500F / 🌎 $ par an  
 	
+	Payez en utilisant l'UPI ID : ```9480251952@paytm```  
 	
-	Pay Using Upi I'd ```9480251952@paytm```
-	
-	After Payment Send Screenshots Of 
-        Payment To Admin"""
+	Après le paiement, envoyez la capture d'écran  
+        du paiement à l'Administrateur."""
 	keybord = InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/mrlokaman")], 
-        			[InlineKeyboardButton("PayPal 🌎",url = "https://www.paypal.me/lokamanchendekar"),
-        			InlineKeyboardButton("Paytm",url = "https://p.paytm.me/xCTH/los89jy0")],[InlineKeyboardButton("Cancel",callback_data = "cancel")  ]])
-	await message.reply_text(text = text,reply_markup = keybord)
+        			InlineKeyboardButton("ADMIN 🛂", url="https://t.me/Kingcey")], 
+        			[InlineKeyboardButton("PayPal 🌎", url="https://www.paypal.me"),
+        			InlineKeyboardButton("Paytm", url="https://p.paytm.me")],
+        			[InlineKeyboardButton("Annuler", callback_data="cancel")]])
+	await message.reply_text(text=text, reply_markup=keybord)
